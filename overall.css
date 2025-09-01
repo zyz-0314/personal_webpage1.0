@@ -1,0 +1,60 @@
+body {
+    background-image: url("./images/backgrounds/background1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    transition: background-image 0.5s ease-in-out; /*背景图切换时淡入淡出效果*/
+}
+
+.information {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between; /* 左右分布 */
+    align-items: flex-start; /* 顶部对齐 */
+    width: 100%;
+    height: 100%;
+}
+
+.toptip {
+    visibility: hidden;
+    width: 50px;
+    background-color: rgba(77, 75, 75, 0.5);
+    color: #fff;
+    font-family: "等线", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 8px;
+    position: absolute;
+    bottom: calc(100%+8px);
+    right: -50px;
+    transform: translateX(-50%);
+    opacity: 0;
+    white-space: nowrap;
+
+    transition: opacity 0.3s ease;
+}
+.icon-wrapper:hover .toptip {
+    visibility: visible;
+    opacity: 1;
+}
+.icon-wrapper {
+    position: fixed;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

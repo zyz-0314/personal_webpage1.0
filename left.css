@@ -1,0 +1,193 @@
+@font-face {
+    /*greeting的字体样式*/
+    font-family: "PermanentMarker-Regular";
+    src: url('font/PermanentMarker-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    /*alias的字体样式*/
+    font-family: "ComforterBrush-Regular";
+    src: url('font/ComforterBrush-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "白舟忍者";
+    src: url('font/白舟忍者.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.left {
+    margin-left: 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; /* 垂直居中 */
+    height: 80vh; /* 占据主区域高度，确保能居中*/
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 30%;
+    margin-right: 16px;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+/*鼠标悬停于avatar时的交互*/
+.avatar {
+    transition: 0.3s ease;
+}
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-family: "ComforterBrush-Regular", cursive, sans-serif;
+    font-size: 50px;
+    
+}
+
+.greeting {
+    font-family: "PermanentMarker-Regular", "白舟忍者", "等线", cursive, sans-serif;
+    font-size: 40px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 32px auto 0 auto;
+    
+    letter-spacing: 15px;
+    text-transform: uppercase;
+
+    max-width: 500px;
+    min-height: 48px;
+    max-height: 120px; /* 最大高度，超出滚动 */
+    overflow-y: auto; /*添加滚动条*/
+    word-break: break-all; /*允许长单词换行*/
+    overflow-wrap: break-word; /*允许长单词换行*/
+    text-align: center; /*文字居中*/
+    padding-top: 32px; /* 给倒影留空间*/ /*防止滚动条拉到最上之后无法完整显示第一行文字*/
+
+    /*文字倒影*/
+    -webkit-box-reflect: below 0.8px linear-gradient(transparent, #0008);
+
+    /*动画效果*/
+    animation: animate 7s linear;
+    animation-fill-mode: forwards; /*动画结束后保留最后一帧样式*/
+}
+@keyframes animate {
+    0%{
+        color: #0e3742;
+    }
+    50%{
+        color: #fff;
+        text-shadow: 0 0 10px aqua,
+                     0 0 20px aqua,
+                     0 0 30px aqua;
+    }
+    100%{
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.813);
+    }
+}
+/*美化滚动条*/
+.greeting::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+.greeting::-webkit-scrollbar-thumb {
+    background: rgba(30, 40, 50, 0.35);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.greeting::-webkit-scrollbar-thumb:hover {
+    background: rgba(30, 40, 50, 0.6);
+    cursor: pointer;
+}
+.greeting::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.description {
+    font-family: "等线";
+    text-align: center;
+    cursor: default;
+
+    margin-top: 50px;
+    font-size: 20px;
+    color: #fff;
+    background: rgba(30, 40, 50, 0.35);
+    border-radius: 16px;
+    padding: 24px 32px 24px 32px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.18);
+    
+    backdrop-filter: blur(8px); /*毛玻璃效果*/
+    -webkit-backdrop-filter: blur(8px); /*兼容性*/
+
+    border: 1px solid rgba(26, 13, 13, 0.18);
+    position: relative;
+    margin-bottom: 24px;
+    width: 500px;
+
+    transition: transform 0.3s ease;
+}
+.description:hover {
+    transform: scale(1.05);
+    box-shadow: 12px 12px 16px rgba(0, 0, 0, 0.25);
+    background: rgba(30, 40, 50, 0.45);
+}
+/*description部分的上下引号修饰*/
+.description::before {
+    content: "“";
+    font-size: 32px;
+    position: absolute;
+    left: 18px;
+    top: 10px;
+    color: #fff;
+    opacity: 0.7;
+    font-family: serif;
+}
+.description::after {
+    content: "”";
+    font-size: 32px;
+    position: absolute;
+    right: 18px;
+    bottom: 10px;
+    color: #fff;
+    opacity: 0.7;
+    font-family: serif;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+    transition: transform 0.2s;
+    display: inline-block;
+    vertical-align: middle;
+}
+.icon:hover {
+    transform: scale(1.2) rotate(-8deg);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}

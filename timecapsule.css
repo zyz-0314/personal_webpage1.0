@@ -1,0 +1,123 @@
+.time-capsule-icon {
+    position: fixed;
+    width: 26px;
+    height: 26px;
+    right: 30px;
+    bottom: 80px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.time-capsule-icon:hover {
+    transform: scale(1.1);
+}
+
+.time-capsule {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    padding: 30px;
+    
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+    box-sizing: border-box;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.time-capsule.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.time-capsule-content {
+    position: relative;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 70%;
+    height: 70%;
+    max-width: 800px;
+    max-height: 600px;
+
+    overflow-y: auto;
+    background-color: rgba(88, 88, 88, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+.time-capsule.active .time-capsule-content {
+    opacity: 1;
+}
+
+.time-capsule-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.8rem;
+    color: #999;
+
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.time-capsule-close:hover {
+    color: #333;
+    transform: scale(1.1);
+}
+
+.time-capsule-title {
+    color: #fff;
+    font-family: "等线", sans-serif;
+}
+
+.time-unit {
+    color: #fff;
+    font-family: "等线", sans-serif;
+
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.time-unit span {
+    flex: 1;
+    min-width: 120px;
+    font-family: "Consolas", "等线", sans-serif, monospace;
+}
+.time-unit progress {
+    width: 100%;
+    height: 8px;
+    margin-top: 8px;
+    transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.progress-percent {
+    color: #fff;
+    font-family: "等线", sans-serif;
+    margin-left: auto;
+    min-width: 60px;
+    border-radius: 25px;
+}
+
+.time-capsule-icon-wrapper {
+    bottom: 80px;
+}

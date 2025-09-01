@@ -1,0 +1,134 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>produced by skywaalker.z</title>
+
+    <link rel="stylesheet" href="overall.css">
+    <link rel="stylesheet" href="left.css">
+    <link rel="stylesheet" href="right.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="timecapsule.css">
+</head>
+
+<body>
+
+    <main class="information" id="info">
+        <div class="info-container">
+            <div class="left">
+                <div class="profile">
+                    <div class="avatar">
+                        <img src="images/avatar.png" alt="avatar">
+                    </div>
+                    <div class="name">
+                        <span id="alias">skywaalker.z</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="greeting" contenteditable="true">Hello World!</p>
+                    <p class="description">一个互联网边缘的无名小站</p>
+                </div>
+                <div class="links">
+                    <a href="https://github.com/zyz-0314">
+                        <img class="icon" src="images/links-icons/github.png" alt="github">
+                    </a>
+                    <a href="https://space.bilibili.com/505195832?spm_id_from=333.1007.0.0">
+                        <img class="icon" src="images/links-icons/bilibili.png" alt="bilibili">
+                    </a>
+                    <a href="https://www.douyin.com/user/self?from_tab_name=main">
+                        <img class="icon" src="images/links-icons/douyin.png" alt="douyin">
+                    </a>
+                    <a href="https://www.youtube.com/@ryanZYZ">
+                        <img class="icon" src="images/links-icons/youtube.png" alt="youtube">
+                    </a>
+                    <a href="https://www.xiaohongshu.com/user/profile/6774f9eb000000001801f4aa">
+                        <img class="icon" src="images/links-icons/xiaohongshu.png" alt="xiaohongshu">
+                    </a>
+                    <a href="https://music.163.com/#/user/home?id=5147195671">
+                        <img class="icon" src="images/links-icons/netease-music.png" alt="netease-music">
+                    </a>
+
+                </div>
+            </div>
+            <div class="right">
+                <div class="quote" id="quote-container">
+                    <p class="saying">"He said one day you'll leave this world behind,
+                        so live a life you will remember."</p>
+                    <p class="author">— Avicii</p>        
+                </div>
+                <div class="welcome">
+                    <div class="datetime-container">
+                        <span id="current-date"></span>
+                    </div>
+                    <div class="time-container">
+                        <span id="real-time"></span>
+                    </div>
+                    <div class="greeting-time"></div>
+                    <p class="traveler">远道而来的旅行者</p>
+                    <div class="weather">
+                        <span class="current-weather"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="icon-wrapper time-capsule-icon-wrapper">
+        <img class="time-capsule-icon" src="images/clock.png" alt="time-capsule">
+        <div class="toptip">时光胶囊</div>
+    </div>
+    <div class="time-capsule">
+        <div class="time-capsule-content">
+            <span class="time-capsule-close">&times;</span>
+            <h3 class="time-capsule-title">时光胶囊</h3>
+            <div class="time-unit">
+                <span>今日已度过 <span id="today-passed-hours"></span> 小时</span>
+                <span>剩余 <span id="total-remain-hours"></span> 小时</span>
+                <progress id="day-progress" value="0" max="100"></progress>
+            </div>
+            <div class="time-unit">
+                <span>本周已度过 <span id="week-passed-hours"></span> 小时</span>
+                <span>剩余 <span id="week-remain-hours"></span> 小时</span>
+                <progress id="week-progress" value="0" max="100"></progress>
+            </div>
+            <div class="time-unit">
+                <span>本月已度过 <span id="month-passed-hours"></span> 小时</span>
+                <span>剩余 <span id="month-remain-hours"></span> 小时</span>
+                <progress id="month-progress" value="0" max="100"></progress>
+            </div>
+            <div class="time-unit">
+                <span>今年已度过 <span id="year-passed-hours"></span> 小时</span>
+                <span>剩余 <span id="year-remain-hours"></span> 小时</span>
+                <progress id="year-progress" value="0" max="100"></progress>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="icon-wrapper modal-icon-wrapper">
+        <img class="modal-icon" src="images/set.png" alt="setting">
+        <div class="toptip">背景设置</div>
+    </div>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 class="modal-title">背景设置</h3>
+            <div class="background-choices">
+                <img src="images/backgrounds/background1.png" alt="Azores" data-bg="images/backgrounds/background1.png">
+                <img src="images/backgrounds/background2.png" alt="Scotland" data-bg="images/backgrounds/background2.png">
+                <img src="images/backgrounds/background3.png" alt="boat" data-bg="images/backgrounds/background3.png">
+                <img src="images/backgrounds/background4.png" alt="whale" data-bg="images/backgrounds/background4.png">
+                <img src="images/backgrounds/background5.png" alt="Greenland" data-bg="images/backgrounds/background5.png">
+                <img src="images/backgrounds/background6.png" alt="Lofoten" data-bg="images/backgrounds/background6.png">
+                <img src="images/backgrounds/background7.png" alt="Lofoten" data-bg="images/backgrounds/background7.png">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="backgroundmodal.js"></script>
+    <script src="timecapsulemodal.js"></script>
+    <script src="quotes.js"></script>
+</body>
+    
+</html>
