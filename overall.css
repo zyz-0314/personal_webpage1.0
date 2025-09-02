@@ -1,5 +1,5 @@
 body {
-    background-image: url("./images/backgrounds/background1.png");
+    background-image: url("background1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,4 +57,5 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
